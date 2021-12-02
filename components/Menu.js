@@ -6,7 +6,7 @@ const menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out'
+  'Log Out',
 ];
 
 /* 
@@ -19,18 +19,27 @@ const menuItems = [
   </div>
 */
 function menuMaker(items){
+  
   const menu = document.createElement('div');
   menu.classList.add('menu');
   const ul = document.createElement('ul');
   menu.appendChild(ul);
-  const li = document.createElement('li');
   
+  
+  for (let i=0; i<items.length; i++){
+    const li = document.createElement('li');
+    console.log(items[i]);
+    ul.appendChild(li);
+    li.textContent = items[i];
+  }
+  /*
   items.forEach(element => {
+   console.log(element);
     ul.appendChild(li);
     li.textContent = element;
     
   });
-
+*/
 const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', () => {
   
